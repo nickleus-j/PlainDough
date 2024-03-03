@@ -5,10 +5,11 @@
       xmlns:uen="using:Uno.Extensions.Navigation.UI"
       xmlns:utu="using:Uno.Toolkit.UI"
       xmlns:um="using:Uno.Material"
+      xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
       NavigationCacheMode="Required"
       Background="{ThemeResource BackgroundBrush}">
 
-  <Grid utu:SafeArea.Insets="VisibleBounds">
+  <Grid utu:SafeArea.Insets="VisibleBounds" >
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
       <RowDefinition />
@@ -19,16 +20,6 @@
     </Grid.ColumnDefinitions>
     <utu:NavigationBar Content="{Binding Title}" />
 
-    <!--<StackPanel Grid.Row="1"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center"
-          Spacing="16">
-      <TextBox Text="{Binding Name, Mode=TwoWay}"
-          PlaceholderText="Enter your name:" />
-      <Button Content="Go to Second Page"
-          AutomationProperties.AutomationId="SecondPageButton"
-          Command="{Binding GoToSecond}" />
-    </StackPanel>-->
     <StackPanel Margin="20" Grid.Row="1" Grid.Column="0">
       <TextBlock Text="POTSO Class Generator" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
@@ -57,14 +48,17 @@
         <ListView.ItemTemplate>
           <DataTemplate>
             <StackPanel Orientation="Horizontal" Padding="10">
-              <TextBlock Text="{Binding Name}" />
+              <TextBox Text="{Binding Name}" />
               <TextBlock Text=" : " />
-              <TextBlock Text="{Binding DataType}" />
+              <TextBox Text="{Binding DataType}" />
+              <Button Content="Save"  Background="#229D21"/>
+              <Button Content="Remove"   Background="#671A19"/>
             </StackPanel>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
       <TextBox x:Name="ResultBox" AcceptsReturn="True" TextWrapping="Wrap"/>
+      
     </StackPanel>
   </Grid>
 </Page>
