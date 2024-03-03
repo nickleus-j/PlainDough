@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "PlainDough",
+  "display": "standalone",
+  "name": "PlainDough",
+  "short_name": "PlainDough",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
