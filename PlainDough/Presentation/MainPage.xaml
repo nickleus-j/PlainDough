@@ -38,14 +38,17 @@
         <TextBox x:Name="txtPropertyName" Width="150"/>
         <TextBlock Text="Data Type:" VerticalAlignment="Center" Width="100" Margin="10,0,0,0"/>
         
-        <TextBox/>
-        <ComboBox  x:Name="txtDataType" Width="150">
+        
+        <ComboBox  x:Name="txtDataType" Width="150" IsEditable="True">
           <x:String>string</x:String>
           <x:String>number</x:String>
           <x:String>boolean</x:String>
           <x:String>Date</x:String>
-          <x:String>Others</x:String>
+          <ComboBoxItem value="{Binding OtherDataType.Text}">
+            <x:String>Others</x:String>
+          </ComboBoxItem>
         </ComboBox>
+        <TextBox x:Name="OtherDataType"/>
         <CheckBox x:Name="isArray" Content="Considered as an array" />
       </StackPanel>
       

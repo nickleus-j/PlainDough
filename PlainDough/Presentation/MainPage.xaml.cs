@@ -1,7 +1,6 @@
 using System.Collections.ObjectModel;
 using System.Text;
 using PlainDough.DTO;
-
 namespace PlainDough.Presentation;
 
 public sealed partial class MainPage : Page
@@ -16,8 +15,8 @@ public sealed partial class MainPage : Page
     private void AddProperty_Click(object sender, RoutedEventArgs e)
     {
         string propertyName = txtPropertyName.Text;
-        string dataType = txtDataType.SelectedItem?.ToString();
-
+        string dataType = txtDataType.SelectedValue?.GetType() == typeof(string) ? txtDataType.SelectedValue?.ToString(): OtherDataType.Text;
+            //txtDataType.SelectedItem?.ToString();
         if (!string.IsNullOrEmpty(propertyName) && !string.IsNullOrEmpty(dataType))
         {
             Properties.Add(new PlainObj { Name = propertyName, DataType = dataType, IsCollection=isArray.IsChecked==true });
