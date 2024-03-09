@@ -16,13 +16,14 @@ public sealed partial class MainPage : Page
     private void AddProperty_Click(object sender, RoutedEventArgs e)
     {
         string propertyName = txtPropertyName.Text;
-        string dataType = txtDataType.Text;
+        string dataType = txtDataType.SelectedItem?.ToString();
 
         if (!string.IsNullOrEmpty(propertyName) && !string.IsNullOrEmpty(dataType))
         {
-            Properties.Add(new PlainObj { Name = propertyName, DataType = dataType });
+            Properties.Add(new PlainObj { Name = propertyName, DataType = dataType, IsCollection=isArray.IsChecked==true });
             txtPropertyName.Text=String.Empty; 
-            txtDataType.Text = String.Empty;
+            txtDataType.SelectedIndex = 0;
+            isArray.IsChecked = false;
         }
         else
         {
@@ -42,7 +43,7 @@ public sealed partial class MainPage : Page
             potsoCode.AppendLine("{");
             foreach (var property in Properties)
             {
-                potsoCode.AppendLine($"public  {property.Name}: {property.DataType};");
+                potsoCode.AppendLine($"public  {property.Name}: {property.CompleteDataType};");
             }
             potsoCode.AppendLine("}");
             // Save to a text file

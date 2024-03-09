@@ -37,8 +37,18 @@
         <TextBlock Text="Property Name:" VerticalAlignment="Center" Width="100"/>
         <TextBox x:Name="txtPropertyName" Width="150"/>
         <TextBlock Text="Data Type:" VerticalAlignment="Center" Width="100" Margin="10,0,0,0"/>
-        <TextBox x:Name="txtDataType" Width="150"/>
+        
+        <TextBox/>
+        <ComboBox  x:Name="txtDataType" Width="150">
+          <x:String>string</x:String>
+          <x:String>number</x:String>
+          <x:String>boolean</x:String>
+          <x:String>Date</x:String>
+          <x:String>Others</x:String>
+        </ComboBox>
+        <CheckBox x:Name="isArray" Content="Considered as an array" />
       </StackPanel>
+      
       <Button Content="Add Property"  Margin="10,0,0,0" Click="AddProperty_Click"/>
       <Button Content="Generate POTSO" Background="#77327A"  Height="30" Click="GeneratePOTSO_Click" HorizontalAlignment="Center"/>
     </StackPanel>
@@ -50,7 +60,7 @@
             <StackPanel Orientation="Horizontal" Padding="10">
               <TextBox Text="{Binding Name}" />
               <TextBlock Text=" : " />
-              <TextBox Text="{Binding DataType}" />
+              <TextBox Text="{Binding CompleteDataType}" />
               <Button Content="Save"  Background="#229D21"/>
               <Button Content="Remove"   Background="#671A19"/>
             </StackPanel>
