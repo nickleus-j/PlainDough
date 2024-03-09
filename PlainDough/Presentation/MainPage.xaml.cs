@@ -12,6 +12,13 @@ public sealed partial class MainPage : Page
         Properties = new ObservableCollection<PlainObj>();
         propertyListView.ItemsSource = Properties;
     }
+    private void ResetPropertyForm()
+    {
+        txtPropertyName.Text = String.Empty;
+        txtDataType.SelectedIndex = 0;
+        isArray.IsChecked = false;
+        OtherDataType.Text = String.Empty;
+    }
     private void AddProperty_Click(object sender, RoutedEventArgs e)
     {
         string propertyName = txtPropertyName.Text;
@@ -20,9 +27,7 @@ public sealed partial class MainPage : Page
         if (!string.IsNullOrEmpty(propertyName) && !string.IsNullOrEmpty(dataType))
         {
             Properties.Add(new PlainObj { Name = propertyName, DataType = dataType, IsCollection=isArray.IsChecked==true });
-            txtPropertyName.Text=String.Empty; 
-            txtDataType.SelectedIndex = 0;
-            isArray.IsChecked = false;
+            ResetPropertyForm();
         }
         else
         {
@@ -37,7 +42,6 @@ public sealed partial class MainPage : Page
         if (!string.IsNullOrEmpty(className))
         {
             StringBuilder potsoCode = new StringBuilder();
-            //potsoCode.AppendLine($"type {className} = {superclass ?? "{}"};");
             potsoCode.Append($"export class {className} ");
             potsoCode.AppendLine("{");
             foreach (var property in Properties)

@@ -21,7 +21,7 @@
     <utu:NavigationBar Content="{Binding Title}" />
 
     <StackPanel Margin="20" Grid.Row="1" Grid.Column="0">
-      <TextBlock Text="POTSO Class Generator" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+      
 
       <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
         <TextBlock Text="Class Name:" VerticalAlignment="Center" Width="100"/>
@@ -70,6 +70,7 @@
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
+      <TextBlock Text="POTSO Class" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
       <TextBox x:Name="ResultBox" AcceptsReturn="True" TextWrapping="Wrap"/>
       
     </StackPanel>

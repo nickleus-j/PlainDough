@@ -10,9 +10,9 @@ public partial record MainModel
         INavigator navigator)
     {
         _navigator = navigator;
-        Title = "Main";
-        Title += $" - {localizer["ApplicationName"]}";
-        Title += $" - {appInfo?.Value?.Environment}";
+        Title = "Plain Old TypeSctipt Object(POTSO) Generator";
+        //Title += $" - {localizer["ApplicationName"]}";
+        //Title += $" - {appInfo?.Value?.Environment}";
     }
 
     public string? Title { get; }
