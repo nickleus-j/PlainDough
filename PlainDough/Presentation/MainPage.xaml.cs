@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using PlainDough.DTO;
 namespace PlainDough.Presentation;
@@ -58,5 +59,13 @@ public sealed partial class MainPage : Page
         {
 
         }
+    }
+    private void ResetObject_Click(object sender, RoutedEventArgs e)
+    {
+        Properties.Clear();
+        ResetPropertyForm();
+        ResultBox.Text = String.Empty;
+        txtClassName.Text = String.Empty;
+        txtSuperclass.Text = String.Empty;
     }
 }

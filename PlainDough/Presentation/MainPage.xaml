@@ -53,6 +53,7 @@
       </StackPanel>
       
       <Button Content="Add Property"  Margin="10,0,0,0" Click="AddProperty_Click"/>
+      <Button Content="Reset Form"  Margin="10,0,0,0" Click="ResetObject_Click"/>
       <Button Content="Generate POTSO" Background="#77327A"  Height="30" Click="GeneratePOTSO_Click" HorizontalAlignment="Center"/>
     </StackPanel>
     <StackPanel Grid.Row="1" Grid.Column="1">
